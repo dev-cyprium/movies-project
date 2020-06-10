@@ -1,0 +1,20 @@
+{
+    "name": "dev-cyprium/movies-repo",
+    "description": "A project showing off how frameworks work",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefan Kupresak",
+            "email": "stefan_vg@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Lib\\": "lib/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
