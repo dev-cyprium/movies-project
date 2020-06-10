@@ -7,6 +7,10 @@ use Closure;
 class Router
 {
   private static $instance = null;
+
+  /**
+   * @var RouteBuilder
+   */
   private $routeBuilder;
 
   public function __construct()
@@ -28,4 +32,8 @@ class Router
     $callback(self::instance()->routeBuilder);
   }
 
+  public function listRoutes()
+  {
+    return $this->routeBuilder->listRoutes();
+  }
 }

@@ -22,4 +22,12 @@ class RouteBuilder
   {
     $this->routingTable[$uri] = new RouteInfo($uri, $controller, $method, $httpVerb);
   }
+
+  /**
+   * List the routes in the application
+   */
+  public function listRoutes()
+  {
+    return array_keys($this->routingTable);
+  }
 }

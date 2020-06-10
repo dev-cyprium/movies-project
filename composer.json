@@ -16,5 +16,12 @@
         }
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "coverage": "phpunit --coverage-html reports"
+    }
 }

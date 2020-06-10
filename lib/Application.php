@@ -2,13 +2,16 @@
 
 namespace Lib;
 
-abstract class Application 
+abstract class Application
 {
   /**
-   * Where to find the router for the application
+   * Sets the path for the router
    */
-  protected $routesPath = APP_ROOT . "/src/router.php";
-  
+  protected function routerPath()
+  {
+    return $this->getApplicationRoot() . "/src/router.php";
+  }
+
   /**
    * Entry point for the PHP application
    */
@@ -17,8 +20,20 @@ abstract class Application
     $this->loadRoutes();
   }
 
-  private function loadRoutes()
+  /**
+   * Loads the routes from the routing path
+   */
+  public function loadRoutes()
   {
-    require_once $this->routesPath;
+    require_once $this->routerPath();
+  }
+
+  /**
+   * Defines application root directory
+   * so we can use paths relative to it
+   */
+  public final function getApplicationRoot()
+  {
+    return dirname(dirname(__FILE__));
   }
 }
