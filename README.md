@@ -14,3 +14,9 @@ Composer is used for scripts in this project.
 composer test     # runs the test for the project
 composer coverage # code coverage reports
 ```
+
+## Technology
+- PHP 7.3.10
+- Composer 1.8.6
+- GitHub
+- GitHub Actions (CIs)
