@@ -5,6 +5,9 @@ The `lib` folder is all the library logic and the `src` is the entry point.
 
 Insipired by Laravel.
 
+Note this project uses zero dependecies **by design** because it's showing
+off naive and simplme implementations for concepts used by big frameworks.
+
 ## Commands
 Composer is used for scripts in this project.
 ```bash

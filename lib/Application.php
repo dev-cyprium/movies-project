@@ -2,9 +2,8 @@
 
 namespace Lib;
 
-use DispatchController;
-use FetchRequestData;
-use InitializeSession;
+use Lib\Middleware\Common\DispatchController;
+use Lib\Middleware\Common\InitializeSession;
 use Lib\Middleware\MiddlewareFactory;
 use Lib\Middleware\Pipeline;
 
@@ -14,9 +13,8 @@ abstract class Application
    * @var string[]
    */
   private $middleware = [
-    FetchRequestData::class,
     InitializeSession::class,
-    DispatchController::class,
+    DispatchController::class
   ];
 
   /**

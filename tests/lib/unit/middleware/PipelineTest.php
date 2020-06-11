@@ -31,7 +31,7 @@ class MiddlewareStack implements Processable
   }
 }
 
-class PipelineTest extends TestCase
+final class PipelineTest extends TestCase
 {
   public function testWorksOnAGivenPipeline()
   {

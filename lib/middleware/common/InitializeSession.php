@@ -1,4 +1,5 @@
 <?php
+namespace Lib\Middleware\Common;
 
 use Lib\Middleware\Middleware;
 
