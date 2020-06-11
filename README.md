@@ -1,5 +1,7 @@
 #  Movies Repo
 
+![PHP Composer](https://github.com/dev-cyprium/movies-project/workflows/PHP%20Composer/badge.svg)
+
 This project is a proof of concept in vanilla PHP how to structure a project.
 The `lib` folder is all the library logic and the `src` is the entry point.
 
