@@ -2,15 +2,22 @@
 
 namespace Lib;
 
+use DispatchController;
+use FetchRequestData;
+use InitializeSession;
+use Lib\Middleware\MiddlewareFactory;
+use Lib\Middleware\Pipeline;
+
 abstract class Application
 {
   /**
-   * Sets the path for the router
+   * @var string[]
    */
-  protected function routerPath()
-  {
-    return $this->getApplicationRoot() . "/src/router.php";
-  }
+  private $middleware = [
+    FetchRequestData::class,
+    InitializeSession::class,
+    DispatchController::class,
+  ];
 
   /**
    * Entry point for the PHP application
@@ -18,6 +25,7 @@ abstract class Application
   public function run()
   {
     $this->loadRoutes();
+    $this->handleRequest();
   }
 
   /**
@@ -35,5 +43,18 @@ abstract class Application
   public final function getApplicationRoot()
   {
     return dirname(dirname(__FILE__));
+  }
+
+  /**
+   * Sets the path for the router
+   */
+  protected function routerPath()
+  {
+    return $this->getApplicationRoot() . "/src/router.php";
+  }
+
+  private function handleRequest()
+  {
+    $pipeline = new Pipeline(MiddlewareFactory::from($this->middleware));
   }
 }
